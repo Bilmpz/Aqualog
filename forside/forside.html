@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaLink – Dashboard</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="forside.css">
+
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+
+    <header>
+  <a class="brand" href="/forside/forside.html">
+        <span class="drop" aria-hidden="true"></span>
+        <span>
+          <b>AquaLink</b>
+          <small>Forbrugerportal</small>
+        </span>
+      </a>
+      <div class="user">
+        <a class="pill" href="javascript:history.back()" style="text-decoration:none">Tilbage</a>
+        <span class="pill" id="serverStatus">Forbinder…</span>
+        <span class="avatar">D</span>
+      </div>
+    </header>
+
+    <div class="grid">
+ 
+      <aside>
+        <div class="card-h" style="padding-bottom:10px">
+          <h3>Kældekilde-Orte Vandværk</h3>
+          <small>Demo • Nørrebrogade 131, 7000 Fredericia</small>
+        </div>
+        <div class="menu">
+          <a class="active" href="/forside/forside.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 12h18M12 3v18"/></svg> Dashboard</a>
+          <a href="/forside/finans.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="14" rx="3" stroke-width="2"/><path stroke-width="2" d="M3 10h18"/></svg> Finans</a>
+          <a href="/forside/forbrug.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M12 2C9 6 6 9.5 6 13a6 6 0 0012 0c0-3.5-3-7-6-11z"/></svg> Forbrug</a>
+          <a href="/forside/menuline.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/></svg>Vi tilbyder</a>
+          <a href="/forside/indstillinger.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 15l5-5-5-5" stroke-width="2"/></svg> Indstillinger</a>
+          <button class="btn">Download data (CSV)</button>
+        </div>
+      </aside>
+
+  
+      <div style="display:grid; gap:22px">
+  
+        <section class="card">
+          <div class="card-c hero">
+            <div>
+              <span class="pill">Seneste måling: 3,95 m³/dag</span>
+              <h2 style="margin:10px 0 4px; font-family:Outfit, Inter, sans-serif; font-size:28px">Dit forbrugsoverblik</h2>
+              <small style="color:var(--muted)">Se dagligt, månedligt og årligt forbrug. Få overblik over alarmer og aktuelle fakturaer.</small>
+            </div>
+            <div style="display:flex; gap:12px; flex-wrap:wrap">
+              <div class="statbox"><small>Dagsforbrug</small><b>— m³/dag</b></div>
+              <div class="statbox"><small>Månedsforbrug (aktuel)</small><b>139,51 m³/måned</b></div>
+              <div class="statbox"><small>Årsforbrug</small><b>1.460,60 m³/år</b></div>
+            </div>
+          </div>
+        </section>
+
+
+        <section style="display:grid; grid-template-columns: 1.6fr 1fr; gap:22px">
+          <div class="card">
+            <div class="card-h">
+              <h3>Forbrug (12 mdr)</h3>
+              <small>Estimeret forbrug pr. måned</small>
+            </div>
+            <div class="card-c">
+              <div class="chart">
+
+                <svg viewBox="0 0 600 220" width="100%" height="100%" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0%" stop-color="#06b6d4" stop-opacity=".35"/>
+                      <stop offset="100%" stop-color="#2563eb" stop-opacity=".06"/>
+                    </linearGradient>
+                  </defs>
+
+                  <g stroke="#e2e8f0" stroke-width="1">
+                    <line x1="0" y1="40" x2="600" y2="40"/>
+                    <line x1="0" y1="90" x2="600" y2="90"/>
+                    <line x1="0" y1="140" x2="600" y2="140"/>
+                    <line x1="0" y1="190" x2="600" y2="190"/>
+                  </g>
+
+                  <path d="M0,150
+                           C50,120 100,130 150,110
+                           C200,95 250,135 300,115
+                           C350,95 400,130 450,115
+                           C500,100 550,125 600,110
+                           L600,220 L0,220 Z"
+                        fill="url(#g)"/>
+
+                  <path d="M0,150
+                           C50,120 100,130 150,110
+                           C200,95 250,135 300,115
+                           C350,95 400,130 450,115
+                           C500,100 550,125 600,110"
+                        fill="none" stroke="#0284c7" stroke-width="3"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-h">
+              <h3>Kort</h3>
+              <small>Nørrebrogade 131, 7000 Fredericia</small>
+            </div>
+            <div class="card-c">
+              <div style="height:280px; border:1px solid #edf2f7; background:#f1f5f9; border-radius:16px; display:grid; place-items:center; color:#94a3b8">
+                (Kort placeholder)
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section style="display:grid; grid-template-columns: 1.6fr 1fr; gap:22px">
+          <div class="card">
+            <div class="card-h">
+              <h3>Notifikationer</h3>
+              <small>Opsæt alarmer for lækage, flow, temperatur og tryk</small>
+            </div>
+            <div class="card-c tabs">
+
+              <input type="radio" name="t" id="t1" checked>
+              <input type="radio" name="t" id="t2">
+              <input type="radio" name="t" id="t3">
+              <input type="radio" name="t" id="t4">
+
+              <div class="tab-head">
+                <label for="t1">LL</label>
+                <label for="t2">SL</label>
+                <label for="t3">Flow</label>
+                <label for="t4">Temp</label>
+              </div>
+
+              <div class="tab-body">
+                <div class="panel p1">Lavt niveau alarm – giver besked hvis beholdningen falder under din tærskel.</div>
+                <div class="panel p2">Spidsbelastning – overvågning af uventet højt forbrug.</div>
+                <div class="panel p3">Flow – kontinuerligt flow uden stop kan indikere lækage.</div>
+                <div class="panel p4">Temperatur – advarsel ved usædvanlige temperaturer.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-h">
+              <h3>Aktuel faktura</h3>
+              <small>2025-10-23 • Forfald: 2025-11-15</small>
+            </div>
+            <div class="card-c">
+              <div class="invoice">
+                <div>
+                  <div style="font-weight:600">Faktura nr. 2025 01141</div>
+                  <small>Beløb: 7.154,88 kr.</small>
+                </div>
+                <button class="pay">Betal</button>
+              </div>
+              <button class="btn" style="margin-top:12px">Vis alle fakturaer</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer class="wrap" style="padding-top:0">
+      <span>© <script>document.write(new Date().getFullYear())</script> AquaLink</span>
+  <span style="color:#64748b"><a href="/login/index.html" style="color:inherit; text-decoration:none">Log ud</a> · Privatlivspolitik</span>
+    </footer>
+  </div>
+<script src="forside.js"></script>
+</body>
+</html>

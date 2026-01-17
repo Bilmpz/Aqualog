@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaLink – Forbrug</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/forside/forside.css">
+</head>
+<body>
+  <div class="wrap">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+
+    <header>
+  <a class="brand" href="/forside/forside.html">
+        <span class="drop" aria-hidden="true"></span>
+        <span>
+          <b>AquaLink</b>
+          <small>Forbrugerportal</small>
+        </span>
+      </a>
+      <div class="user">
+        <a class="pill" href="javascript:history.back()" style="text-decoration:none">Tilbage</a>
+        <span class="pill" id="serverStatus">Forbinder…</span>
+        <span class="avatar">D</span>
+      </div>
+    </header>
+
+    <div class="grid">
+      <aside>
+        <div class="card-h" style="padding-bottom:10px">
+          <h3>Kældekilde-Orte Vandværk</h3>
+          <small>Demo • Nørrebrogade 131, 7000 Fredericia</small>
+        </div>
+        <div class="menu">
+          <a href="/forside/forside.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 12h18M12 3v18"/></svg> Dashboard</a>
+          <a href="/forside/finans.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="14" rx="3" stroke-width="2"/><path stroke-width="2" d="M3 10h18"/></svg> Finans</a>
+          <a class="active" href="/forside/forbrug.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M12 2C9 6 6 9.5 6 13a6 6 0 0012 0c0-3.5-3-7-6-11z"/></svg> Forbrug</a>
+          <a href="/forside/menuline.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/></svg>Vi tilbyder</a>          <a href="/forside/indstillinger.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 15l5-5-5-5" stroke-width="2"/></svg> Indstillinger</a>
+          <button class="btn">Download data (CSV)</button>
+        </div>
+      </aside>
+
+      <div style="display:grid; gap:22px">
+        <section class="card">
+          <div class="card-h">
+            <h3>Forbrug</h3>
+            <small>Grafer og historik for forbrug</small>
+          </div>
+          <div class="card-c">
+            <div class="chart">
+              <svg viewBox="0 0 600 220" width="100%" height="100%" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0%" stop-color="#06b6d4" stop-opacity=".35"/>
+                    <stop offset="100%" stop-color="#2563eb" stop-opacity=".06"/>
+                  </linearGradient>
+                </defs>
+                <g stroke="#e2e8f0" stroke-width="1">
+                  <line x1="0" y1="40" x2="600" y2="40"/>
+                  <line x1="0" y1="90" x2="600" y2="90"/>
+                  <line x1="0" y1="140" x2="600" y2="140"/>
+                  <line x1="0" y1="190" x2="600" y2="190"/>
+                </g>
+                <path d="M0,150 C50,120 100,130 150,110 C200,95 250,135 300,115 C350,95 400,130 450,115 C500,100 550,125 600,110 L600,220 L0,220 Z" fill="url(#g)"/>
+                <path d="M0,150 C50,120 100,130 150,110 C200,95 250,135 300,115 C350,95 400,130 450,115 C500,100 550,125 600,110" fill="none" stroke="#0284c7" stroke-width="3"/>
+              </svg>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer class="wrap" style="padding-top:0">
+      <span>© <script>document.write(new Date().getFullYear())</script> AquaLink</span>
+      <span style="color:#64748b"><a href="/login/index.html" style="color:inherit; text-decoration:none">Log ud</a> · Privatlivspolitik</span>
+    </footer>
+  </div>
+
+  <script>
+    (async () => {
+      const el = document.getElementById('serverStatus');
+      try {
+        const res = await fetch('/api/ping', { credentials: 'include' });
+        if (res.ok) el.textContent = 'Server forbundet'; else el.textContent = 'Server offline';
+      } catch { el.textContent = 'Server offline'; }
+    })();
+  </script>
+</body>
+</html>

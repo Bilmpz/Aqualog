@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaLink – Vi tilbyder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/forside/forside.css">
+</head>
+<body>
+  <div class="wrap">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+
+    <header>
+  <a class="brand" href="/forside/forside.html">
+        <span class="drop" aria-hidden="true"></span>
+        <span>
+          <b>AquaLink</b>
+          <small>Forbrugerportal</small>
+        </span>
+      </a>
+      <div class="user">
+        <a class="pill" href="javascript:history.back()" style="text-decoration:none">Tilbage</a>
+        <span class="pill" id="serverStatus">Forbinder…</span>
+        <span class="avatar">D</span>
+      </div>
+    </header>
+
+    <div class="grid">
+      <aside>
+        <div class="card-h" style="padding-bottom:10px">
+          <h3>Kældekilde-Orte Vandværk</h3>
+          <small>Demo • Nørrebrogade 131, 7000 Fredericia</small>
+        </div>
+        <div class="menu">
+          <a href="/forside/forside.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 12h18M12 3v18"/></svg> Dashboard</a>
+          <a href="/forside/finans.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="14" rx="3" stroke-width="2"/><path stroke-width="2" d="M3 10h18"/></svg> Finans</a>
+          <a href="/forside/forbrug.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M12 2C9 6 6 9.5 6 13a6 6 0 0012 0c0-3.5-3-7-6-11z"/></svg> Forbrug</a>
+          <a class="active" href="/forside/menuline.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/></svg>Vi tilbyder</a>
+          <a href="/forside/indstillinger.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 15l5-5-5-5" stroke-width="2"/></svg> Indstillinger</a>
+          <button class="btn">Download data (CSV)</button>
+        </div>
+      </aside>
+
+      <div style="display:grid; gap:22px">
+        <section class="card">
+          <div class="card-h">
+            <h3>Hvad tilbyder vi</h3>
+            <small>Hold musen over en knap for at se undersiderne</small>
+          </div>
+          <div class="card-c">
+            <div class="tabs4">
+              <a class="tab4" href="/forside/services/index.html">Services
+                <span class="caret"></span>
+                <div class="dropdown">
+                  <p class="dropdownt">
+                    <p class="dropdowntext">Kvalitetssikring og Ledelse</p>
+                    <p class="dropdowntext">Ledningsplan GIS/LER2</p>
+                    <p class="dropdowntext">Gratis til vandrådet</p>
+                    <p class="dropdowntext">Hjemmeside CMS</p>
+                    <p class="dropdowntext">Smart Pejling Automatisk</p>
+                    <p class="dropdowntext">SMS Tjeneste</p>
+                    <p class="dropdowntext">Regnskab</p>
+                    <p class="dropdowntext">DriveBy Aflæsning</p>
+                    <p class="dropdowntext">Kurser</p>
+                  </p>
+                </div>
+              </a>
+
+              <a class="tab4" href="/forside/opret-vandvaerk/index.html">Opret vandværk
+                <span class="caret"></span>
+                <div class="dropdown">
+                  <p class="dropdowntext">Opret din vandværk</p>
+                </div>
+              </a>
+
+              <a class="tab4" href="/forside/it-sikkerhed/index.html">IT Sikkerhed
+                <span class="caret"></span>
+                <div class="dropdown">
+                  <p class="dropdowntext">Spørgeskema</p>
+                  <p class="dropdowntext">IT vs OT</p>
+                  <p class="dropdowntext">Workshop</p>
+                </div>
+              </a>
+
+              <a class="tab4" href="/forside/kontakt/index.html">Kontakt
+                <span class="caret"></span>
+                <div class="dropdown">
+                  <p class="dropdowntext">Onlinemøde</p>
+                  <p class="dropdowntext">introvideo</p>
+                  <p class="dropdowntext">leverandører</p>
+
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer class="wrap" style="padding-top:0">
+      <span>© <script>document.write(new Date().getFullYear())</script> AquaLink</span>
+      <span style="color:#64748b"><a href="/login/index.html" style="color:inherit; text-decoration:none">Log ud</a> · Privatlivspolitik</span>
+    </footer>
+  </div>
+
+  <script>
+    (async () => {
+      const el = document.getElementById('serverStatus');
+      try {
+        const res = await fetch('/api/ping', { credentials: 'include' });
+        if (res.ok) el.textContent = 'Server forbundet'; else el.textContent = 'Server offline';
+      } catch { el.textContent = 'Server offline'; }
+    })();
+  </script>
+</body>
+</html>

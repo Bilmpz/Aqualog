@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AquaLink – Log ind</title>
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+
+
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+
+    <header>
+      <a class="brand" href="#">
+        <span class="droplet" aria-hidden="true"></span>
+        <span class="brand-title">
+          <b>AquaLink</b>
+          <span>Forbrugerportal</span>
+        </span>
+      </a>
+      <span class="pill">Sikkert login</span>
+    </header>
+
+    <main>
+      <section class="lead">
+        <span class="pill">Sikkert login & databeskyttelse</span>
+        <h1>Velkommen til din <span style="background:linear-gradient(90deg,#0891b2,#2563eb); -webkit-background-clip:text; background-clip:text; color:transparent">forbrugerportal</span></h1>
+        <p>Følg dit vandforbrug, få notifikationer og håndtér fakturaer – elegant, hurtigt og overskueligt.</p>
+
+        <div class="features">
+          <div class="feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M12 2C9 6 6 9.5 6 13a6 6 0 0012 0c0-3.5-3-7-6-11z"/><circle cx="12" cy="13" r="3" stroke-width="2"/></svg>
+            Live forbrugsdata
+          </div>
+          <div class="feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9" stroke-width="2"/></svg>
+            Lækage-alarmer
+          </div>
+          <div class="feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="14" rx="3" stroke-width="2"/><path stroke-width="2" d="M3 10h18"/></svg>
+            Nem fakturabetaling
+          </div>
+          <div class="feat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/></svg>
+            Smuk, enkel UI
+          </div>
+        </div>
+      </section>
+
+      <section class="login">
+        <div class="card">
+          <h2>Log ind</h2>
+          <small>Indtast e-mail og adgangskode for at fortsætte.</small>
+
+          <div class="field">
+            <label class="label" for="email">E-mail</label>
+            <input class="input" id="email" type="email" placeholder="navn@eksempel.dk" />
+          </div>
+
+          <div class="field">
+            <label class="label" for="pw">Adgangskode</label>
+            <input class="input" id="pw" type="password" placeholder="••••••••" />
+          </div>
+
+          <div class="row">
+            <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--muted)">
+              <input type="checkbox" /> Husk mig
+            </label>
+            <a href="#">Glemt adgangskode?</a>
+          </div>
+
+          <div class="field">
+            <button class="btn" id="loginBtn" type="button">Log ind</button>
+            <button class="btn btn-ghost" type="button">Opret bruger</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <script>document.write(new Date().getFullYear())</script> AquaLink</span>
+      <span><a href="#">Privatlivspolitik</a> · <a href="#">Support</a></span>
+    </footer>
+  </div>
+
+<script src="index.js"></script>
+
+</body>
+</html>

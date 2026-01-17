@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Services – AquaLink</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/forside/forside.css">
+  <style>
+    .grid-links{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+    .card-link{display:block;padding:14px 16px;border-radius:14px;background:#fff;border:1px solid #edf2f7;text-decoration:none;color:#0f172a;font-weight:600}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+
+    <header>
+  <a class="brand" href="/forside/forside.html">
+        <span class="drop" aria-hidden="true"></span>
+        <span>
+          <b>AquaLink</b>
+          <small>Forbrugerportal</small>
+        </span>
+      </a>
+      <div class="user">
+        <a class="pill" href="javascript:history.back()" style="text-decoration:none">Tilbage</a>
+        <span class="pill" id="serverStatus">Forbinder…</span>
+        <span class="avatar">D</span>
+      </div>
+    </header>
+
+    <div class="card" style="margin-bottom:18px">
+      <div class="card-h">
+        <h3>Hvad tilbyder vi</h3>
+        <small>Find alt din information her</small>
+      </div>
+      <div class="card-c">
+        <div class="tabs4">
+          <a class="tab4 primary" href="/forside/services/index.html">Services
+            <span class="caret"></span>
+
+
+          <a class="tab4" href="/forside/opret-vandvaerk/index.html">Opret vandværk
+            <span class="caret"></span>
+
+          </a>
+
+          <a class="tab4" href="/forside/it-sikkerhed/index.html">IT Sikkerhed
+            <span class="caret"></span>
+     
+          </a>
+
+          <a class="tab4" href="/forside/kontakt/index.html">Kontakt
+            <span class="caret"></span>
+ 
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section class="card">
+      <div class="card-h">
+        <h3>Alle services</h3>
+        <small>Vælg en service for at læse mere</small>
+      </div>
+      <div class="card-c">
+        <div class="grid-links" style="color: pink;">
+          <a class="card-link" href="kvalitetssikring-og-ledelse.html">Kvalitetssikring og Ledelse</a>
+          <a class="card-link" href="hjemmeside-cms.html">Hjemmeside CMS</a>
+          <a class="card-link" href="sms-tjeneste.html">SMS Tjeneste</a>
+          <a class="card-link" href="regnskab.html">Regnskab</a>
+          <a class="card-link" href="ledningsplan-gis-ler2.html">Ledningsplan GIS/LER2</a>
+          <a class="card-link" href="smart-pejling-automatisk.html">Smart Pejling Automatisk</a>
+          <a class="card-link" href="driveby-aflaesning.html">DriveBy Aflæsning</a>
+          <a class="card-link" href="kurser.html">Kurser</a>
+          <a class="card-link" href="gratis-til-vandraadet.html">Gratis til vandrådet</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="wrap" style="padding-top:12px">
+      <span>© <script>document.write(new Date().getFullYear())</script> AquaLink</span>
+      <span style="color:#64748b"><a href="/login/index.html" style="color:inherit; text-decoration:none">Log ud</a></span>
+    </footer>
+  </div>
+
+  <script>
+    (async () => {
+      const el = document.getElementById('serverStatus');
+      try {
+        const res = await fetch('/api/ping', { credentials: 'include' });
+        if (res.ok) el.textContent = 'Server forbundet'; else el.textContent = 'Server offline';
+      } catch { el.textContent = 'Server offline'; }
+    })();
+  </script>
+</body>
+</html>
