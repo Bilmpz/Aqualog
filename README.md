@@ -13,8 +13,8 @@ Projektet indeholder blandt andet en forside og et login-system, som giver bruge
 
 ##  Funktioner
 
-✔ Grundlæggende navigation mellem sider  
-✔ Login-formular (UI)  
-✔ Simpelt design med CSS
+Grundlæggende navigation mellem sider  
+Login-formular (UI)  
+Simpelt design med CSS
 
 
